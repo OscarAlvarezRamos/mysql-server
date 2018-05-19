@@ -2,7 +2,9 @@ version: '3'
 services:
   db:
     build: .
+    image: mysql/mysql-db
     container_name: mysql-server
+    network_mode: bridge
     restart: always
     ports:
       - "${MYSQL_PORT}:3306"
@@ -16,6 +18,7 @@ services:
 
     volumes:
       - mysql-server-storage:/var/lib/mysql
+      - $PWD/temp:/docker-entrypoint-initdb.d
 volumes:
   mysql-server-storage:
     external: true

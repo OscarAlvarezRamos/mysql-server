@@ -28,10 +28,22 @@ services:
     network_mode: bridge
     links:
       - db
-    environment:
-      PMA_HOST: db
+#    environment:
+#      PMA_HOST: db
     ports:
       - "8080:80"
+
+
+#  backup:
+#    image: confirm/mysql-backup
+#    container_name: my-backup
+#    network_mode: bridge
+#    volumes:
+#        - $PWD/backups:/backup:rw
+#    links:
+#        - db
+
+
 
 
 volumes:

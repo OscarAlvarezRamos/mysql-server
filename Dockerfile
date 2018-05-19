@@ -3,7 +3,7 @@ FROM mysql/mysql-server
 RUN yum -y update
 RUN yum install -y nano vi
 RUN yum -y install wget
-RUN uname -or
+# RUN uname -or
 
 # WORKDIR tmp/
 

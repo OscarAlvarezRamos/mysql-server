@@ -19,6 +19,21 @@ services:
     volumes:
       - mysql-server-storage:/var/lib/mysql
       - $PWD/temp:/docker-entrypoint-initdb.d
+
+
+
+  admin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    network_mode: bridge
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+    ports:
+      - "8080:80"
+
+
 volumes:
   mysql-server-storage:
     external: true

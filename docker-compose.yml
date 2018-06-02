@@ -18,7 +18,7 @@ services:
 
     volumes:
       - mysql-server-storage:/var/lib/mysql
-      - $PWD/temp:/docker-entrypoint-initdb.d
+#      - "$PWD/temp:/docker-entrypoint-initdb.d:ro"
 
 
 

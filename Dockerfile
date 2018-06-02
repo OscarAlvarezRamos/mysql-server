@@ -15,6 +15,7 @@ RUN rpm -U --quiet /tmp/p7zip-plugins-16.02-10.el7.x86_64.rpm
 
 
 
-# ADD temp/script.sh /docker-entrypoint-initdb.d
+ADD image/setup.sh /docker-entrypoint-initdb.d
+RUN chmod +x /docker-entrypoint-initdb.d/setup.sh
 
 expose 3306
